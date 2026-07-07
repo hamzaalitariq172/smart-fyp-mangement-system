@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { useAuth } from './AuthContext';
 import toast from 'react-hot-toast';
 
-const SOCKET_URL = window.location.origin.includes('localhost') ? 'http://localhost:5000' : window.location.origin;
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
 
 const SocketContext = createContext();
 
